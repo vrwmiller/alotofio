@@ -1,0 +1,36 @@
+<table id="buttons" border="0" cellpadding="0" cellspacing="0" name="Navigation" style="border-spacing: 0px 9px;">
+    <tbody>
+  </tbody></table>
+  <script>
+
+function hover(element) {
+  if (element.src == "../ButtonBackground.png")
+    element.setAttribute('src', '../ButtonBackgroundHover.png');
+}
+
+function unhover(element) {
+  if (element.src == "../ButtonBackgroundHover.png")
+    element.setAttribute('src', '../ButtonBackground.png');
+}
+
+  var table = document.getElementById("buttons");
+
+  function CreateButton(name,url,background = "../ButtonBackground.png") {
+  var row = table.insertRow(0);
+  var cell1 = row.insertCell(0);
+
+  cell1.innerHTML = '<p><div style="position:relative; text-align: center; color:white;" onmouseover="hover(this.children[0].children[0]);" onmouseout="unhover(this.children[0].children[0]);"><a href="' + url + '"><img name="' + name +'" src="' + background + '" onload="" align="top" style="border-width:0px; border-color:white; border-style: solid;"><div style="font-weight: 1000;color: rgb(27, 97, 27); position:absolute; top:50%;left:50%; transform:translate(-50%,-50%);">' + name +'</div> </a> </div> </p> ';
+  }
+
+  
+  CreateButton("","https://twitter.com/RecordRanchVA/", "../Twitter.png");
+  CreateButton("","https://www.instagram.com/recordranch/", "../Instagram.png");
+  CreateButton("","https://www.facebook.com/RecordRanchVA/", "../Facebook.png");
+  table.insertRow(0).insertCell(0);
+  table.insertRow(0).insertCell(0);
+  CreateButton("Record Labels","RecordLabelGuide.htm");
+  CreateButton("eBay","https://www.ebay.com/usr/recordranch/");
+  CreateButton("Catalog","Catalog.html");
+  CreateButton("Home","http://alotof.io/");
+  //CreateButton("Record Label Guide","RecordLabelGuide.htm");
+  </script>
